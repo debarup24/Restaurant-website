@@ -11,7 +11,7 @@ import tomatocut from "../assets/tomatocut.png";
 
 const Hero = () => {
   return (
-    <div className=" bg-orange-50 h-[600px] ">
+    <div className=" h-[600px] bg-gradient-to-b from-orange-100 ">
       <div className="flex lg:flex-row flex-col items-center justify-center p-5 lg:max-w-7xl mx-auto relative">
         <div className="lg:w-1/2 lg:space-y-6 lg:px-10 relative z-20">
           <div className="flex gap-0 lg:gap-2">
