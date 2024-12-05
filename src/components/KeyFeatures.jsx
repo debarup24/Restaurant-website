@@ -6,7 +6,7 @@ import Lottie from "lottie-react";
 
 const KeyFeatures = () => {
   return (
-    <div className="bg-orange-50 py-20" id="about">
+    <div className=" bg-gradient-to-t from-orange-50  py-20" id="about">
       <div className="flex flex-col lg:flex-row mx-auto max-w-7xl">
         <div className="lg:w-1/2 flex items-center justify-center">
           {/* <img src={chef} alt="chef" className='w-64'/> */}
