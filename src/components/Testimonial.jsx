@@ -47,7 +47,7 @@ const Testimonial = () => {
   ];
 
   return (
-    <div className="py-10 ">
+    <div className="py-12 ">
       <h1 className="text-center text-3xl lg:text-4xl font-bold">
         What Our Customers Say
       </h1>

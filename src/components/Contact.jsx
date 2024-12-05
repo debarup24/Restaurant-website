@@ -11,14 +11,15 @@ const Contact = () => {
             Contact Us
           </h2>
           <p className="mt-2 text-lg lg:text-xl leading-8 text-gray-600">
-            Aute magna irure deserunt veniam aliqua magna enim voluptate.
+            For Any Kind of Query, Feel Free to Reach Out to Us. <br />
+            <span className="text-red-600">Submit the form in the below</span>
           </p>
         </div>
         <div className="lg:grid lg:grid-cols-2 mt-10 lg:mt-0">
           <Lottie animationData={delivery} />
           <form
             action="#"
-            className="lg:mx-auto mt-16 max-w-xl sm:mt-20 bg-orange-50 p-8 rounded-lg mx-4 "
+            className="lg:mx-auto mt-16 max-w-xl sm:mt-20 bg-orange-50 shadow-md shadow-orange-800 p-8 rounded-lg mx-4 "
           >
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
@@ -78,7 +79,7 @@ const Contact = () => {
                   htmlFor="phone-number"
                   className="block text-sm font-semibold leading-6"
                 >
-                  Phone number
+                  Phone number <span className="text-red-500">*</span>
                 </label>
                 <div className="relative mt-2.5">
                   <input
@@ -113,7 +114,7 @@ const Contact = () => {
                 type="submit"
                 className="block w-full rounded-md bg-red-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
               >
-                Let's talk
+                Submit
               </button>
             </div>
           </form>
