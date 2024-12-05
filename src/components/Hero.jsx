@@ -75,10 +75,10 @@ const Hero = () => {
             <h1 className=" text-red-500 lg:text-2xl text-xl font-bold">
               50+{" "}
             </h1>
-            <p className=" text-sm font-semibold">Restaurants </p>
+            <p className=" text-sm font-semibold">Outlets </p>
           </div>
         </div>
-        {/* <img src={tomato} alt="tomato" className='absolute top-1 left-0 w-20 ' /> */}
+
         {/* <img src={tomato} alt="tomato" className='absolute top-1 left-20 w-20 ' />
   <img src={tomato} alt="tomato" className='absolute top-1 left-30 w-20 ' />
   <img src={tomato} alt="tomato" className='absolute top-1 left-40 w-20 ' /> */}

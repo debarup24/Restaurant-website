@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import PopularDishes from "./components/PopularDishes";
 import Partners from "./components/Partner";
+import KeyFeatures from "./components/KeyFeatures";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Hero />
       <PopularDishes />
       <Partners />
+      <KeyFeatures />
     </div>
   );
 }
