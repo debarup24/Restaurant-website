@@ -6,6 +6,7 @@ import Partners from "./components/Partner";
 import KeyFeatures from "./components/KeyFeatures";
 import Testimonial from "./components/Testimonial";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <KeyFeatures />
       <Testimonial />
       <Contact />
+      <Footer />
     </div>
   );
 }
