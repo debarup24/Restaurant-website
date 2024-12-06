@@ -8,6 +8,7 @@ import time from "../assets/time.png";
 // import tomato from "../assets/tomato.png"
 import cabbage from "../assets/cabbage.png";
 import tomatocut from "../assets/tomatocut.png";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -19,10 +20,16 @@ const Hero = () => {
             <img src={appStore} alt="appstore" className="w-28 h-10" />
           </div>
           <div className="z-10"></div>
-          <h1 className="font-bold text-4xl lg:text-6xl tracking-normal mt-4 lg:mt-0">
+          <motion.h1
+            initial={{ opacity: 0, x: -100 }}
+            transition={{ duration: 1.5 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="font-bold text-4xl lg:text-6xl tracking-normal mt-4 lg:mt-0"
+          >
             <span className="text-red-500">Delicious</span> Meals Delivered to
             Your Doorsteps.
-          </h1>
+          </motion.h1>
           <p className="text-sm text-gray-600 my-3">
             Discover a world of culinary delights with our food delivery
             service. Enjoy fast, reliable delivery and a wide selection of
