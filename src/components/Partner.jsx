@@ -9,7 +9,10 @@ const Partners = () => {
     <div className="py-10 bg-white">
       <div className="text-center">
         <h1 className="text-3xl lg:text-4xl font-bold mb-4 text-red-500">
-          Our Partners
+          Our{" "}
+          <span className="underline underline-offset-4 decoration-1 under font-light">
+            Partners
+          </span>
         </h1>
         <p className="text-sm lg:text-xl">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium

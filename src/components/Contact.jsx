@@ -1,8 +1,39 @@
 import React from "react";
 import delivery from "../assets/delivery.json";
 import Lottie from "lottie-react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Submitting....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "4fbcf095-821d-4201-b43b-4b636f78e54a");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("");
+
+      toast.success("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+
+      toast.error(data.message);
+      setResult("");
+    }
+  };
+
   return (
     <div className="" id="contact">
       <div className="pb-20">
@@ -18,7 +49,8 @@ const Contact = () => {
         <div className="lg:grid lg:grid-cols-2 mt-10 lg:mt-0">
           <Lottie animationData={delivery} />
           <form
-            action="#"
+            onSubmit={onSubmit}
+            // action="#"
             className="lg:mx-auto mt-16 max-w-xl sm:mt-20 bg-orange-50 shadow-md shadow-orange-800 p-8 rounded-lg mx-4 "
           >
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -34,6 +66,7 @@ const Contact = () => {
                     id="first-name"
                     name="first-name"
                     type="text"
+                    required
                     autoComplete="given-name"
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-red-500 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6"
                   />
@@ -51,6 +84,7 @@ const Contact = () => {
                     id="last-name"
                     name="last-name"
                     type="text"
+                    required
                     autoComplete="family-name"
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6"
                   />
@@ -69,6 +103,7 @@ const Contact = () => {
                     id="email"
                     name="email"
                     type="email"
+                    required
                     autoComplete="email"
                     className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
@@ -86,6 +121,7 @@ const Contact = () => {
                     id="phone-number"
                     name="phone-number"
                     type="tel"
+                    required
                     autoComplete="tel"
                     className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-500 sm:text-sm sm:leading-6"
                   />
@@ -114,7 +150,7 @@ const Contact = () => {
                 type="submit"
                 className="block w-full rounded-md bg-red-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
               >
-                Submit
+                {result ? result : "Submit"}
               </button>
             </div>
           </form>

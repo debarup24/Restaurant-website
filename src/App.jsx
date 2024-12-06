@@ -7,10 +7,12 @@ import KeyFeatures from "./components/KeyFeatures";
 import Testimonial from "./components/Testimonial";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
   return (
     <div>
+      <ToastContainer />
       <Navbar />
       <Hero />
       <PopularDishes />

@@ -3,6 +3,7 @@ import Card from "./Card";
 import pizza1 from "../assets/pizza1.png";
 import pizza2 from "../assets/pizza2.png";
 import pizza3 from "../assets/pizza3.png";
+import { motion } from "framer-motion";
 
 const PopularDishes = () => {
   const menu = [
@@ -32,12 +33,27 @@ const PopularDishes = () => {
   return (
     <div className="py-10 px-5 lg:px-0 lg:py-20 bg-gray-800" id="menu">
       <div className="text-center max-w-7xl mx-auto">
-        <h1 className="text-3xl lg:text-4xl font-bold text-red-500">
-          Popular Dishes
-        </h1>
-        <p className="lg:text-xl text-sm pt-2 text-white">
+        <motion.h1
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 1.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl lg:text-4xl font-bold text-red-500"
+        >
+          Popular{" "}
+          <span className="underline underline-offset-4 decoration-1 under font-light">
+            Dishes{" "}
+          </span>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 1.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="lg:text-xl text-sm pt-2 text-white"
+        >
           Check out our most popular and highly-rated dishes.
-        </p>
+        </motion.p>
         <div className="grid grid-cols-1 lg:grid-cols-3 pt-11 gap-7">
           {menu.map((item) => {
             return <Card key={item.id} menu={item} />;

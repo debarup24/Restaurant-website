@@ -3,6 +3,7 @@ import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import twitter from "../assets/twitter.png";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -86,7 +87,13 @@ const Footer = () => {
             rights reserved.
           </p>{" "}
         </div>
-        <p className="text-center mt-2 py-1">
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 1.5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-2 py-1"
+        >
           Created by{" "}
           <a
             className="text-orange-600 font-semibold hover:text-red-800"
@@ -94,7 +101,7 @@ const Footer = () => {
           >
             Debarup
           </a>
-        </p>
+        </motion.p>
       </div>
     </footer>
   );
