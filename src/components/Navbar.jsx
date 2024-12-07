@@ -47,7 +47,7 @@ function Header() {
             <li to={"/"}>Home</li>
             <li to={"#menu"}>Menu</li>
             <li to={"#about"}>About</li>
-            <li to={"#contact"}>Contact</li>
+            <li to={"contact"}>Contact</li>
           </ul>
         )}
 
